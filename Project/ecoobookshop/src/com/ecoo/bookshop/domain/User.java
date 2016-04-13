@@ -5,8 +5,7 @@ package com.ecoo.bookshop.domain;
  * @author wuhengyu
  *
  */
-/*
- * 属性哪里来
+/**
  * 1. t_user表：因为我们需要把t_user表查询出的数据封装到User对象中
  * 2. 该模块所有表单：因为我们需要把表单数据封装到User对象中
  */

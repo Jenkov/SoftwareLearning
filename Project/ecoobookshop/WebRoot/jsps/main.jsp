@@ -17,7 +17,19 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link rel="stylesheet" type="text/css" href="<c:url value='/jsps/css/main.css'/>">
+	
+	<style>
+	*{font-size:10pt;font-family:"微软雅黑";}
+body{text-align:center;}
+.table{position:absolute;top:0px;left:0px;width:100%;height:100%;border:1px solid #15B69A;border-collapse: collapse;}
+.table td{border:1px solid #15B69A;}
+.trTop {background: #15B69A;}
+.tdTop {text-align: center; height: 100px;}
+.tdLeft{width: 190px;padding:5px;}
+.tdSearch{height: 45px; border-bottom-width: 0px; padding: 0px; margin: 0px;}
+.tdBody{border-top-width: 0px;}
+iframe {left:0px;top:0px;width: 100%;height: 100%;}
+	</style>
   </head>
   
   <body>

@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ecoo.bookshop.domain.User;
 import com.ecoo.bookshop.pager.PageBean;
 import com.ecoo.bookshop.service.OrderService;
-
 import com.ecoo.bookshop.domain.Order;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class AdminOrderServlet extends BaseServlet {
 	private OrderService orderService = new OrderService();

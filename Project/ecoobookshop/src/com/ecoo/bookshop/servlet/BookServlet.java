@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ecoo.bookshop.domain.Book;
 import com.ecoo.bookshop.pager.PageBean;
 import com.ecoo.bookshop.service.BookService;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class BookServlet extends BaseServlet {
 	private BookService bookService = new BookService();
@@ -38,8 +36,8 @@ public class BookServlet extends BaseServlet {
 	 * @return
 	 */
 	/*
-	 * http://localhost:8080/goods/BookServlet?methed=findByCategory&cid=xxx&pc=3
-	 * /goods/BookServlet + methed=findByCategory&cid=xxx&pc=3
+	 * http://localhost:8080/eccobookshop/BookServlet?methed=findByCategory&cid=xxx&pc=3
+	 * /ecoobookshop/BookServlet + method=findByCategory&cid=xxx&pc=3
 	 */
 	private String getUrl(HttpServletRequest req) {
 		String url = req.getRequestURI() + "?" + req.getQueryString();

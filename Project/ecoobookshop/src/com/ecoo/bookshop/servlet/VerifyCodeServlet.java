@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.util;
+package com.ecoo.bookshop.servlet;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ecoo.bookshop.util.VerifyCode;
+import com.ecoo.bookshop.domain.VerifyCode;
 
 @SuppressWarnings("serial")
 public class VerifyCodeServlet extends HttpServlet {
@@ -17,7 +17,7 @@ public class VerifyCodeServlet extends HttpServlet {
 		VerifyCode vc = new VerifyCode();
 		BufferedImage image = vc.getImage();//获取一次性验证码图片
 		// 该方法必须在getImage()方法之后来调用
-//		System.out.println(vc.getText());//获取图片上的文本
+
 		VerifyCode.output(image, response.getOutputStream());//把图片写到指定流中
 		
 		// 把文本保存到session中，为LoginServlet验证做准备

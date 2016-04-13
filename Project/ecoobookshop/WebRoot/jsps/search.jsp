@@ -17,17 +17,22 @@
 	-->
 <style type="text/css">
 	body {
-		margin-top: 5px;
+		margin-top: 6px;
 		margin-bottom: 0px;
-		margin-left:200px;
 		color: #404040;
+		overflow:hidden;
 	}
 	input {
 		width: 300px;
+		left:100px;
 		height: 30px;
 		border-style:solid;
 		margin:0px;
 		border-color: #15B69A;
+		color:#404040;
+		text-indent:1em;
+		font-family:"微软雅黑";
+		font-size:10px;
 	}
 	a {
 		text-transform:none;
@@ -50,8 +55,9 @@
     	<input type="text" name="bname"/>
     	<span>
     		<a href="javascript:document.getElementById('form1').submit();"><img align="top" border="0" src="../images/btn.bmp"/></a>
-    		<a href="<c:url value='/jsps/gj.jsp'/>" style="font-size: 10pt; color: #404040;" target="body">高级搜索</a>
+    		<a href="<c:url value='/jsps/gj.jsp'/>" style="font-family:'微软雅黑';font-size:15px; color: #404040;" target="body">高级搜索</a>
     	</span>
+    	<hr />
     </form>
     
   </body>

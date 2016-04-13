@@ -25,6 +25,7 @@ a {text-decoration: none;}
   </head>
   
   <body>
+    <img alt="门面，直接截取当当首页图片，并无其他特效" src="../images/userface.png" />
     
     
   </body>

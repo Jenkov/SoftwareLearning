@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.util;
+package com.ecoo.bookshop.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;

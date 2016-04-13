@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <filter>
     <filter-name>EncodingFilter</filter-name>
-    <filter-class>com.ecoo.bookshop.util.EncodingFilter</filter-class>
+    <filter-class>com.ecoo.bookshop.filter.EncodingFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>EncodingFilter</filter-name>
@@ -18,7 +18,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>VerifyCodeServlet</servlet-name>
-    <servlet-class>com.ecoo.bookshop.util.VerifyCodeServlet</servlet-class>
+    <servlet-class>com.ecoo.bookshop.servlet.VerifyCodeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>CategoryServlet</servlet-name>

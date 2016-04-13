@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.util;
+package com.ecoo.bookshop.domain;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -15,7 +15,6 @@ public class VerifyCode {
 	private int w = 70;
 	private int h = 35;
  	private Random r = new Random();
- 	// {"宋体", "华文楷体", "黑体", "华文新魏", "华文隶书", "微软雅黑", "楷体_GB2312"}
 	private String[] fontNames  = {"宋体", "华文楷体", "黑体", "微软雅黑", "楷体_GB2312"};
 	private String codes  = "23456789abcdefghjkmnopqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ";
 	private Color bgColor  = new Color(255, 255, 255);

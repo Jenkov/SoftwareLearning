@@ -27,7 +27,7 @@ public class LoginFilter implements Filter {
 		Object user = req.getSession().getAttribute("sessionUser");
 		if(user == null) {
 			req.setAttribute("code", "error");//为了显示X图片
-			req.setAttribute("msg", "您还没有登录，快去登录吧");
+			req.setAttribute("msg", "哥，您还没有登录，快去登录吧");
 			req.getRequestDispatcher("/jsps/msg.jsp").forward(req, response);
 		} else {
 			chain.doFilter(request, response);//放行

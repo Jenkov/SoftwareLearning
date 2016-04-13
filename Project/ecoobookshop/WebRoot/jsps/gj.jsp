@@ -17,8 +17,46 @@
 	-->
 <style type="text/css">
 	table {
+		position:absolute;
+		top:5px;
+		left:5px;
 		color: #404040;
-		font-size: 10pt;
+	}
+	table td{
+		height:30px;
+		line-height:30px;
+		font-family:"微软雅黑";
+		font-size:15px;
+		
+	}
+	table input[type=text]{
+		height:30px;
+		width:350px;
+		color:#404040;
+		text-indent:1em;
+		font-family:"微软雅黑";
+		font-size:10px;
+	}
+	input[type=submit]{
+		float:right;
+		height:30px;
+		width:100px;
+		color:#fff;
+		background-color:#15B69A;
+		border:1px solid #15B69A;
+		font-family:"微软雅黑";
+		font-size:15px;
+		cursor:pointer;
+	}
+	input[type=reset]{
+		height:30px;
+		width:100px;
+		color:#404040;
+		background-color:#fff;
+		border:1px solid #999;
+		font-family:"微软雅黑";
+		font-size:15px;
+		cursor:pointer;
 	}
 </style>
   </head>
@@ -26,7 +64,7 @@
   <body>
   <form action="<c:url value='/BookServlet'/>" method="get">
   	<input type="hidden" name="method" value="findByCombination"/>
-<table align="center">
+<table align="center" CELLSPACING="10">
 	<tr>
 		<td>书名：</td>
 		<td><input type="text" name="bname"/></td>

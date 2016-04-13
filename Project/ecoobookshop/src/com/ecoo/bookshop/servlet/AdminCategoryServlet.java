@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ecoo.bookshop.domain.Category;
 import com.ecoo.bookshop.service.BookService;
 import com.ecoo.bookshop.service.CategoryService;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class AdminCategoryServlet extends BaseServlet {
 	private CategoryService categoryService = new CategoryService();

@@ -70,7 +70,7 @@ public class BookDao {
 		// 两者建立关系
 		book.setCategory(category);
 		
-		// 把pid获取出来，创建一个Category parnet，把pid赋给它，然后再把parent赋给category
+		// 把pid获取出来，创建一个Category parent，把pid赋给它，然后再把parent赋给category
 		if(map.get("pid") != null) {
 			Category parent = new Category();
 			parent.setCid((String)map.get("pid"));

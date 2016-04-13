@@ -25,7 +25,7 @@
  * 1. 对象名必须与第一个参数相同！
    2. 第二个参数是显示在菜单上的大标题
  */
-var bar = new Q6MenuBar("bar", "网上书城欢迎您");
+var bar = new Q6MenuBar("bar", "图书目录");
 $(function() {
 	bar.colorStyle = 4;//指定配色样式，一共0,1,2,3,4
 	bar.config.imgDir = "<c:url value='/menu/img/'/>";//小工具所需图片的路径

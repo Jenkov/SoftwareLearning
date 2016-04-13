@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.servlet;
+package com.ecoo.bookshop.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

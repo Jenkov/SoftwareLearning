@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.ecoo.bookshop.domain.Category;
 import com.ecoo.bookshop.service.CategoryService;
 
-import com.ecoo.bookshop.util.BaseServlet;
-
 /**
  * 分类模块WEB层
  * @author wuhengyu

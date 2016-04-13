@@ -21,6 +21,7 @@
 		background: #15B69A;
 		margin: 0px;
 		color: #ffffff;
+		overflow:hidden;
 	}
 	a {
 		text-decoration:none;
@@ -36,21 +37,21 @@
   </head>
   
   <body>
-<h1 style="text-align: center;">网上书城欢迎您的光临</h1>
-<div style="font-size: 10pt; line-height: 10px;">
+<h1 style="position:absolute;top:0px;width:20%;left:0;text-align: center;font-family:'微软雅黑';font-size:40px;">网 上 书 城</h1>
+<div style="position:relative;font-size: 10pt; line-height: 10px;top:80%;float:right; margin-right:10px;">
 
 <%-- 根据用户是否登录，显示不同的链接 --%>
 <c:choose>
 	<c:when test="${empty sessionScope.sessionUser }">
-		  <a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">用户登录</a> |&nbsp; 
+		  <a href="<c:url value='/jsps/user/login.jsp'/>" target="_parent">登录</a> |
 		  <a href="<c:url value='/jsps/user/regist.jsp'/>" target="_parent">注册</a>	
 	</c:when>
 	<c:otherwise>
-		     用户：${sessionScope.sessionUser.loginname }&nbsp;&nbsp;|&nbsp;&nbsp;
-		  <a href="<c:url value='/CartItemServlet?method=myCart'/>" target="body">我的购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		  <a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">剁手的订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		  <a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		  <a href="<c:url value='/UserServlet?method=quit'/>" target="_parent">退出</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		     用户：${sessionScope.sessionUser.loginname }&nbsp;|&nbsp;
+		  <a href="<c:url value='/CartItemServlet?method=myCart'/>" target="body">我的购物车</a>&nbsp;|&nbsp;
+		  <a href="<c:url value='/OrderServlet?method=myOrders'/>" target="body">订  单</a>&nbsp;|&nbsp;
+		  <a href="<c:url value='/jsps/user/pwd.jsp'/>" target="body">修改密码</a>&nbsp;|
+		  <a href="<c:url value='/UserServlet?method=quit'/>" target="_parent">退出</a>
 		  
 	</c:otherwise>
 </c:choose>

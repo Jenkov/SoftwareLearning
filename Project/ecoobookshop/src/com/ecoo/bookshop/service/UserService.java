@@ -69,7 +69,7 @@ public class UserService {
 	 * @param code
 	 * @throws UserException 
 	 */
-	public void activatioin(String code) throws UserException {
+	public void activation(String code) throws UserException {
 		/*
 		 * 1. 通过激活码查询用户
 		 * 2. 如果User为null，说明是无效激活码，抛出异常，给出异常信息（无效激活码）

@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ecoo.bookshop.domain.Admin;
 import com.ecoo.bookshop.service.AdminService;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class AdminServlet extends BaseServlet {
 	private AdminService adminService = new AdminService();

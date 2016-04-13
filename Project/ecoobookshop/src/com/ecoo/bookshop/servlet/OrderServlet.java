@@ -18,11 +18,10 @@ import com.ecoo.bookshop.domain.User;
 import com.ecoo.bookshop.pager.PageBean;
 import com.ecoo.bookshop.service.CartItemService;
 import com.ecoo.bookshop.service.OrderService;
-
 import com.ecoo.bookshop.util.CommonUtils;
+import com.ecoo.bookshop.util.PaymentUtil;
 import com.ecoo.bookshop.domain.Order;
 import com.ecoo.bookshop.domain.OrderItem;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class OrderServlet extends BaseServlet {
 	private OrderService orderService = new OrderService();

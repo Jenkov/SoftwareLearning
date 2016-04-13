@@ -14,9 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.ecoo.bookshop.domain.User;
 import com.ecoo.bookshop.service.UserService;
 import com.ecoo.bookshop.service.exception.UserException;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 /**
  * 用户模块WEB层
@@ -28,18 +26,18 @@ public class UserServlet extends BaseServlet {
 	
 	/**
 	 * ajax用户名是否注册校验
-	 * @param req
-	 * @param resp
+	 * @param request
+	 * @param response
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	public String ajaxValidateLoginname(HttpServletRequest req, HttpServletResponse resp)
+	public String ajaxValidateLoginname(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/*
 		 * 1. 获取用户名
 		 */
-		String loginname = req.getParameter("loginname");
+		String loginname = request.getParameter("loginname");
 		/*
 		 * 2. 通过service得到校验结果
 		 */
@@ -47,24 +45,24 @@ public class UserServlet extends BaseServlet {
 		/*
 		 * 3. 发给客户端
 		 */
-		resp.getWriter().print(b);
+		response.getWriter().print(b);
 		return null;
 	}
 	
 	/**
 	 * ajax Email是否注册校验
-	 * @param req
-	 * @param resp
+	 * @param request
+	 * @param response
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	public String ajaxValidateEmail(HttpServletRequest req, HttpServletResponse resp)
+	public String ajaxValidateEmail(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/*
 		 * 1. 获取Email
 		 */
-		String email = req.getParameter("email");
+		String email = request.getParameter("email");
 		/*
 		 * 2. 通过service得到校验结果
 		 */
@@ -72,28 +70,28 @@ public class UserServlet extends BaseServlet {
 		/*
 		 * 3. 发给客户端
 		 */
-		resp.getWriter().print(b);
+		response.getWriter().print(b);
 		return null;
 	}
 	
 	/**
 	 * ajax验证码是否正确校验
-	 * @param req
-	 * @param resp
+	 * @param request
+	 * @param response
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	public String ajaxValidateVerifyCode(HttpServletRequest req, HttpServletResponse resp)
+	public String ajaxValidateVerifyCode(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/*
 		 * 1. 获取输入框中的验证码
 		 */
-		String verifyCode = req.getParameter("verifyCode");
+		String verifyCode = request.getParameter("verifyCode");
 		/*
 		 * 2. 获取图片上真实的校验码
 		 */
-		String vcode = (String) req.getSession().getAttribute("vCode");
+		String vcode = (String) request.getSession().getAttribute("vCode");
 		/*
 		 * 3. 进行忽略大小写比较，得到结果
 		 */
@@ -101,31 +99,31 @@ public class UserServlet extends BaseServlet {
 		/*
 		 * 4. 发送给客户端
 		 */
-		resp.getWriter().print(b);
+		response.getWriter().print(b);
 		return null;
 	}
 
 	/**
 	 * 注册功能
-	 * @param req
-	 * @param resp
+	 * @param request
+	 * @param response
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	public String regist(HttpServletRequest req, HttpServletResponse resp)
+	public String regist(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		/*
 		 * 1. 封装表单数据到User对象
 		 */
-		User formUser = CommonUtils.toBean(req.getParameterMap(), User.class);
+		User formUser = CommonUtils.toBean(request.getParameterMap(), User.class);
 		/*
 		 * 2. 校验之, 如果校验失败，保存错误信息，返回到regist.jsp显示
 		 */
-		Map<String,String> errors = validateRegist(formUser, req.getSession());
+		Map<String,String> errors = validateRegist(formUser, request.getSession());
 		if(errors.size() > 0) {
-			req.setAttribute("form", formUser);
-			req.setAttribute("errors", errors);
+			request.setAttribute("form", formUser);
+			request.setAttribute("errors", errors);
 			return "f:/jsps/user/regist.jsp";
 		}
 		/*
@@ -135,8 +133,8 @@ public class UserServlet extends BaseServlet {
 		/*
 		 * 4. 保存成功信息，转发到msg.jsp显示！
 		 */
-		req.setAttribute("code", "success");
-		req.setAttribute("msg", "注册功能，请马上到邮箱激活！");
+		request.setAttribute("code", "success");
+		request.setAttribute("msg", "注册功能，请马上到邮箱激活！");
 		return "f:/jsps/msg.jsp";
 	}
 	
@@ -223,7 +221,7 @@ public class UserServlet extends BaseServlet {
 		 */
 		String code = req.getParameter("activationCode");
 		try {
-			userService.activatioin(code);
+			userService.activation(code);
 			req.setAttribute("code", "success");//通知msg.jsp显示对号
 			req.setAttribute("msg", "恭喜，激活成功，请马上登录！");
 		} catch (UserException e) {
@@ -358,10 +356,43 @@ public class UserServlet extends BaseServlet {
 	}
 	
 	/*
-	 * 登录校验方法，内容等你自己来完成
+	 * 登录校验
 	 */
 	private Map<String,String> validateLogin(User formUser, HttpSession session) {
 		Map<String,String> errors = new HashMap<String,String>();
+		
+		/*
+		 * 1. 校验登录名
+		 */
+		String loginname = formUser.getLoginname();
+		if(loginname == null || loginname.trim().isEmpty()) {
+			errors.put("loginname", "用户名不能为空！");
+		} else if(loginname.length() < 3 || loginname.length() > 20) {
+			errors.put("loginname", "用户名长度必须在3~20之间！");
+		} 
+		
+		/*
+		 * 2. 校验登录密码
+		 */
+		String loginpass = formUser.getLoginpass();
+		if(loginpass == null || loginpass.trim().isEmpty()) {
+			errors.put("loginpass", "密码不能为空！");
+		} else if(loginpass.length() < 3 || loginpass.length() > 20) {
+			errors.put("loginpass", "密码长度必须在3~20之间！");
+		}
+		
+		
+		/*
+		 * 3. 验证码校验
+		 */
+		String verifyCode = formUser.getVerifyCode();
+		String vcode = (String) session.getAttribute("vCode");
+		if(verifyCode == null || verifyCode.trim().isEmpty()) {
+			errors.put("verifyCode", "验证码不能为空！");
+		} else if(!verifyCode.equalsIgnoreCase(vcode)) {
+			errors.put("verifyCode", "验证码错误！");
+		}
+		
 		return errors;
 	}
 }

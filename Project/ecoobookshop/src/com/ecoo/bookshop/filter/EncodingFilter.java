@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.util;
+package com.ecoo.bookshop.filter;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+
+import com.ecoo.bookshop.util.GetRequest;
 
 
 public class EncodingFilter implements Filter {

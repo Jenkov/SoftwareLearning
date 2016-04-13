@@ -3,10 +3,9 @@ package com.ecoo.bookshop.service;
 import java.sql.SQLException;
 
 import com.ecoo.bookshop.pager.PageBean;
-
+import com.ecoo.bookshop.dao.JdbcUtils;
 import com.ecoo.bookshop.dao.OrderDao;
 import com.ecoo.bookshop.domain.Order;
-import com.ecoo.bookshop.util.JdbcUtils;
 
 public class OrderService {
 	private OrderDao orderDao = new OrderDao();

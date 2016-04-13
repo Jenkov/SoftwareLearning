@@ -197,7 +197,7 @@ public class OrderDao {
 	}
 
 	/*
-	 * 为指定的order载它的所有OrderItem
+	 * 为指定的order加载它的所有OrderItem
 	 */
 	private void loadOrderItem(Order order) throws SQLException {
 		/*

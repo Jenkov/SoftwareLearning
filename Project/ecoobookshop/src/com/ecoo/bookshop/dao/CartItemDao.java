@@ -124,7 +124,7 @@ public class CartItemDao {
 	}
 	
 	/*
-	 * 把一个Map映射成一个Cartitem
+	 * 把一个Map映射成一个CartItem
 	 */
 	private CartItem toCartItem(Map<String,Object> map) {
 		if(map == null || map.size() == 0) return null;

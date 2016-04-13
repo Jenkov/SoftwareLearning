@@ -13,9 +13,7 @@ import com.ecoo.bookshop.domain.Book;
 import com.ecoo.bookshop.domain.CartItem;
 import com.ecoo.bookshop.domain.User;
 import com.ecoo.bookshop.service.CartItemService;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class CartItemServlet extends BaseServlet {
 	private CartItemService cartItemService = new CartItemService();

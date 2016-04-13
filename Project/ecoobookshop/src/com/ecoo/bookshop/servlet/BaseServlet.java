@@ -1,4 +1,4 @@
-package com.ecoo.bookshop.util;
+package com.ecoo.bookshop.servlet;
 
 import java.io.IOException;
 import java.lang.reflect.Method;

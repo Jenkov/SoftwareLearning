@@ -14,9 +14,7 @@ import com.ecoo.bookshop.domain.Category;
 import com.ecoo.bookshop.pager.PageBean;
 import com.ecoo.bookshop.service.BookService;
 import com.ecoo.bookshop.service.CategoryService;
-
 import com.ecoo.bookshop.util.CommonUtils;
-import com.ecoo.bookshop.util.BaseServlet;
 
 public class AdminBookServlet extends BaseServlet {
 	private BookService bookService = new BookService();
