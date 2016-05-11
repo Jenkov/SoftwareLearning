@@ -17,7 +17,7 @@ public class InsertionSort {
 		}
 	}
 	public static void main(String[] args) {
-		Integer[] a = {1,3,6,5,4,8};
+		Integer[] a = {6,1,3,6,5,4,8};
 		insertionSort(a);
 		for(int i = 0;i<a.length;i++)
 			System.out.print(a[i]+" ");

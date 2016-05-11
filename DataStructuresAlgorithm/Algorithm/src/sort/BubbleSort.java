@@ -15,7 +15,7 @@ public class BubbleSort {
 		}
 	}
 	public static void main(String[] args){
-		Integer[] a = {1,6,3,7,9,5};
+		Integer[] a = {6,1,6,3,7,9,5};
 		bubbleSort(a);
 		for(int x = 0;x<a.length;x++)
 			System.out.print(a[x]+" ");

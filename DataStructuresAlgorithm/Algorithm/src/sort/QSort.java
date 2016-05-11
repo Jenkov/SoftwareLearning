@@ -47,7 +47,7 @@ public class QSort {
 	}
 
 	public static void main(String[] args) {
-		int[] x = {1,6,3,7,9,8,4,8,0,3,5};
+		int[] x = {55,5,6,8,45,88,5,4};
 		//new QSort(x).qsort1(0, x.length-1);
 		new QSort(x).qsort3(0, x.length-1);
 		for(int i = 0;i<x.length;i++)
